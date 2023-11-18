@@ -1,0 +1,60 @@
+* {
+    background-color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+}
+
+  body {
+    background-color: #f6fcff;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  input::placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #aaa;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  a,
+  nav button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    transition: 0.4s;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  a:hover,
+  nav button:hover {
+    color: #bbb;
+  }
+  
+  form {
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+ 
+  
+  input {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0.8em 0;
+    background-color: transparent;
+    color: var(--color-title);
+    font-weight: 700;
+  
+  }
+ 
+
+ 

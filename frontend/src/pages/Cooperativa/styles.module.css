@@ -1,0 +1,72 @@
+.title {
+  text-align: center;
+}
+
+
+.input {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addCooperativa {
+  background-color: transparent;
+}
+
+.columnAddCooperado {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 70px;
+}
+
+
+
+.MainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row wrap;
+  height: 75vh;
+  gap: 0px;
+  position: relative;
+  top: 20px;
+}
+
+.ContentContainer {
+  display: grid;
+  align-items: center;
+  padding-top: 10px;
+  position: relative;
+  place-items: center;
+  border-radius: 8px;
+}
+.descricao {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.codigos {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.imagem {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+.delete {
+  color: red;
+  background-color: transparent;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}

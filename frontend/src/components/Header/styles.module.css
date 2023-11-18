@@ -1,0 +1,49 @@
+.nav {
+  position: fixed;
+  top: 0;
+  background-color: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 500px;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 24px;
+  color: orangered;
+}
+
+.menu {
+  padding: 0.4em 0.6em;
+  color: #bf40bf;
+  font-weight: 900;
+  background-color: none;
+}
+
+.LinkList {
+  display: flex;
+  list-style: none;
+  margin-right: 1em;
+}
+
+
+@media screen and (max-width: 535px) {
+ 
+  .nav {
+    display: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+    max-width: 100%;
+  }
+
+
+
+
+  
+  li a {
+    padding: 0.2em 3em;
+  }
+}

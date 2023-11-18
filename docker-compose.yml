@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    restart: always
+    volumes:
+      - mysql-data:/var/lib/mysql/data
+    ports:
+      - 3307:3307
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_USER=${MYSQL_ROOT_USER}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQLDATA=/var/lib/mysql/data
+  backend:
+    container_name: backend
+    image: node_server_template
+    build: ./backend
+    command: npm start
+    ports:
+      - "2005:2005"
+    depends_on:
+      - mysql
+  frontend:
+    container_name: frontend
+    image: react_app_template
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+volumes:
+  mysql-data:

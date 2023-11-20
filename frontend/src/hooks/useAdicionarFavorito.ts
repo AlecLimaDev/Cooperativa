@@ -37,9 +37,9 @@ export default function useAdicionarFavorito() {
     } catch (error) {
       const axiosError = error as AxiosError;
       if (axiosError.response) {
-        console.log("Erro de resposta do servidor:", axiosError.response.data);
+        throw new Error("Erro de resposta do servidor: " + axiosError.response.data);
       } else if (axiosError.request) {
-        console.log("Sem resposta do servidor:", axiosError.request);
+       throw new Error("Sem resposta do servidor: " + axiosError.request);
       }
     }
   }

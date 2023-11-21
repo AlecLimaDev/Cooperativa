@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import S from "./styles.module.css";
+import styles from "./styles.module.css";
 import { useFavoritos } from "../../hooks/useFavoritos";
+import { InputSearch } from "../../components/Input/InputSearch";
+import { ButtonNext } from "../../components/ButtonNext/ButtonNext";
 
 interface Data {
   id?: number;
@@ -15,41 +17,51 @@ const Favoritos = () => {
 
   return (
     <>
-      <h1 className={S.title}>Contatos Favoritos</h1>
-      <input
+      <InputSearch
         placeholder="Digite aqui..."
-        className={S.input}
         type="text"
         name="search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div className={S.columnAddFavorito}>
-        <button className={S.addFavorito}>
+      <div className={styles.columnAddFavorito}>
+        <ButtonNext>
           <Link to="/adicionar-favoritos">Adicionar Contato Favorito 👉</Link>
-        </button>
+        </ButtonNext>
       </div>
-      
+
+      {filteredFavoritos.length > 0 && (
+        <>
+          <h1 className={styles.title}>Contatos favoritos</h1>
+        </>
+      )}
+
       {filteredFavoritos.map((favorito: Data, index) => (
-        <div className={S.container} key={String(index)}>
-          <h3 className={S.nome_contato}>Nome: {favorito.nome_contato}</h3>
-          <p className={S.chave_pix}>Chave: {favorito.chave_pix}</p>
-          <p className={S.tipo_chave_pix}>
+        <div className={styles.container} key={String(index)}>
+          <h3 className={styles.nome_contato}>Nome: {favorito.nome_contato}</h3>
+          <p className={styles.chave_pix}>Chave: {favorito.chave_pix}</p>
+          <p className={styles.tipo_chave_pix}>
             Tipo da Chave: {favorito.tipo_chave_pix}
           </p>
           <button
-            className={S.delete}
+            className={styles.delete}
             onClick={() => handleDelete(favorito.id as number)}
           >
             Deletar dos Favoritos
           </button>
         </div>
       ))}
+
       {filteredFavoritos.length === 0 && (
-        <p className={S.container}>
-          Atualmente você não tem nenhum contato favorito salvo.
-        </p>
+        <>
+          <h1 className={styles.title}>
+            Até o momento não tem o contato favorito digitado na busca
+          </h1>
+          <p className={styles.container}>
+            Atualmente você não tem nenhum contato favorito salvo.
+          </p>
+        </>
       )}
     </>
   );

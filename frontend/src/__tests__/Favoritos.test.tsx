@@ -5,13 +5,15 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Favoritos from "../pages/Favoritos";
 
-it("the title is visible", () => {
+it("the title to have visible", function () {
   render(
     <BrowserRouter>
       <Favoritos />
     </BrowserRouter>
   );
-  const text = screen.getByText("Contatos Favoritos")
-  expect(text).toBeInTheDocument();
-});
 
+  const text = screen.getByText("Contatos favoritos");
+  expect(text).toBeInTheDocument();
+
+
+});

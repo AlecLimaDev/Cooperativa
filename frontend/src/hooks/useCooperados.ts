@@ -22,7 +22,7 @@ export default function useCooperados() {
   async function fetchData() {
     try {
       const response = await instance.get("/cooperados");
-      console.log(response.data)
+      console.log(response.data);
       setData(response.data);
     } catch (error) {
       if (error instanceof AxiosError) {

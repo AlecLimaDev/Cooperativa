@@ -10,19 +10,19 @@
     text-align: center;
 }
 
-
-
-.title { 
+h1 {
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
+
+
 
 .columnAddFavorito {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 50px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: 12%;
 }
 
 .addFavorito {
@@ -34,4 +34,10 @@
     background-color: transparent;
     font-family: sans-serif;
     color: RED;
+}
+
+.btnNext {
+    background-color: transparent;
+    display: flex;
+    position: fixed;
 }

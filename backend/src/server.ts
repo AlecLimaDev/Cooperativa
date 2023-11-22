@@ -6,14 +6,13 @@ import ListaDeChavesController from "./app/controllers/lista-de-chaves-controlle
 import ContatosFavoritosController from "./app/controllers/contatos-favoritos-controller";
 import CooperativasController from "./app/controllers/cooperativas-controller";
 import CooperadosController from "./app/controllers/cooperados-controller";
-
-require("dotenv").config({});
+import { Request, Response } from "express";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Hello World");
 });
 

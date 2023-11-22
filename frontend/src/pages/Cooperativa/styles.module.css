@@ -1,18 +1,14 @@
 .title {
   text-align: center;
+  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
-.input {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.addCooperativa {
+.btn {
   background-color: transparent;
+  display: flex;
+  position: fixed;
 }
 
 .columnAddCooperado {
@@ -20,20 +16,19 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: 70px;
+  margin-top: 12%;
 }
 
 
 
-.MainContainer {
+.mainContainer {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  flex-flow: row wrap;
-  height: 75vh;
-  gap: 0px;
+  gap: 10px;
   position: relative;
   top: 20px;
+  flex-wrap: wrap;
 }
 
 .ContentContainer {
@@ -66,7 +61,4 @@
   background-color: transparent;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-}
+

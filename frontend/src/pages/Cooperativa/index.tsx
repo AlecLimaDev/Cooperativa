@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import S from "./styles.module.css";
+import styles from "./styles.module.css";
 import useCooperativa from "../../hooks/useCooperativa";
+import { InputSearch } from "../../components/Input/InputSearch";
+import { ButtonNext } from "../../components/ButtonNext/ButtonNext";
 
 type Data = {
   id?: number;
@@ -14,34 +16,36 @@ const Cooperativa = () => {
 
   return (
     <>
-      <h1 className={S.title}>Cooperativas de Crédito</h1>
-      <div className={S.container}>
-        <input
+      <section className={styles.container}>
+        <InputSearch
           placeholder="Digite aqui..."
-          className={S.input}
           type="text"
           name="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-      </div>
+      </section>
 
-      <div className={S.columnAddCooperado}>
-        <button className={S.addCooperativa}>
+
+
+      <section className={styles.columnAddCooperado}>
+        <ButtonNext>
           <Link to="/adicionar-cooperativa">Adicionar Cooperativa 👉</Link>
-        </button>
-      </div>
+        </ButtonNext>
+      </section>
 
-      <main className={S.MainContainer}>
+    <h1 className={styles.title}>Cooperativas Cadastradas</h1>
+
+      <main className={styles.mainContainer}>
         {filteredCooperativa.map((coop: Data, index) => (
-          <div className={S.ContentContainer} key={index}>
-            <div className={S.cooperativa}>
-              <img className={S.imagem} alt="" />
-              <p className={S.codigos}>{coop.codigos}</p>
+          <div className={styles.ContentContainer} key={index}>
+            <div className={styles.cooperativa}>
+              <img className={styles.imagem} alt="" />
+              <p className={styles.codigos}>{coop.codigos}</p>
             </div>
-            <h3 className={S.descricao}>{coop.descricao}</h3>
+            <h3 className={styles.descricao}>{coop.descricao}</h3>
             <button
-              className={S.delete}
+              className={styles.delete}
               onClick={() => handleDelete(coop.id as number)}
             >
               DELETAR
@@ -49,7 +53,7 @@ const Cooperativa = () => {
           </div>
         ))}
         {filteredCooperativa.length === 0 && (
-          <p className={S.ContentContainer}>
+          <p className={styles.ContentContainer}>
             Atualmente não tem nenhuma cooperativa cadastrada.
           </p>
         )}

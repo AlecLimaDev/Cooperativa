@@ -14,8 +14,8 @@ const AdicionarFavorito = () => {
 
   return (
     <>
-      <h1 className={S.title}>Adicionar a contatos favoritos</h1>
       <form onSubmit={handleSubmit}>
+        <h1 className={S.title}>Adicionar a contatos favoritos</h1>
         <select name="lista_de_chaves" value={favoritos.lista_de_chaves}>
           <option value="">Selecione um tipo de chave PIX</option>
           {data.map((item: AddFavoritos, index) => (

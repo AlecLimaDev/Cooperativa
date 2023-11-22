@@ -1,12 +1,12 @@
 .nav {
   position: fixed;
   top: 0;
-  background-color: none;
+  background-color: #b9c6d4;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  margin-bottom: 500px;
+  z-index: 2;
 }
 
 .brand {
@@ -16,16 +16,21 @@
 }
 
 .menu {
-  padding: 0.4em 0.6em;
   color: #bf40bf;
   font-weight: 900;
   background-color: none;
 }
 
+
+a:hover {
+  color: aliceblue;
+  transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .LinkList {
   display: flex;
   list-style: none;
-  margin-right: 1em;
+  gap: 10px;
 }
 
 @media screen and (max-width: 535px) {

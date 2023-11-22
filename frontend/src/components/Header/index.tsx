@@ -1,26 +1,35 @@
-import styles from "./styles.module.css"
+import { HTMLAttributes } from "react";
+import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
-const Header = () => {
-  return (
-   <>
-     <nav className={styles.nav}>
-        <NavLink to="/" className={styles.brand}>
-          Alec Cooperativa Union
-        </NavLink>
-        <ul className={styles.LinkList}>
-          <li className={styles.menu}>
-            <NavLink to="/">Cooperativas</NavLink>
-          </li>
-          <li className={styles.menu}>
-            <NavLink to="/cooperados">Cooperados</NavLink>
-          </li>
-          <li className={styles.menu}>
-            <NavLink to="/contatos-favoritos">Contatos Favoritos</NavLink>
-          </li>
-        </ul>
-      </nav>
-   </>
-  )
-}
+import { ButtonContact } from "../ButtonContact/ButtonContact";
 
-export default Header
+type HeaderProps = HTMLAttributes<HTMLElement>;
+
+const Header = ({children, ...rest }: HeaderProps) => {
+  return (
+    <>
+      <header>
+        <nav className={styles.nav} {...rest}>
+          {children}
+          <NavLink to="/" className={styles.brand}>
+            Alec Cooperativa Union
+          </NavLink>
+          <ul className={styles.LinkList}>
+            <li className={styles.menu}>
+              <NavLink to="/">Cooperativas</NavLink>
+            </li>
+            <li className={styles.menu}>
+              <NavLink to="/cooperados">Cooperados</NavLink>
+            </li>
+            <li className={styles.menu}>
+              <NavLink to="/contatos-favoritos">Contatos Favoritos</NavLink>
+            </li>
+          </ul>
+          <ButtonContact>Clique aqui</ButtonContact>
+        </nav>
+      </header>
+    </>
+  );
+};
+
+export default Header;

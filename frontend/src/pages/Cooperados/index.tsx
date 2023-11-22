@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 import useCooperados from "../../hooks/useCooperados";
+import { InputSearch } from "../../components/Input/InputSearch";
+import { ButtonNext } from "../../components/ButtonNext/ButtonNext";
 
 type Data = {
   id: number | string;
@@ -14,11 +16,9 @@ const Cooperados = () => {
 
   return (
     <>
-      <h1 className={styles.title}>Cooperadostyles</h1>
       <div className={styles.container}>
-        <input
+        <InputSearch
           placeholder="Digite aqui..."
-          className={styles.input}
           type="text"
           name="search"
           onChange={(e) => setSearch(e.target.value)}
@@ -26,17 +26,16 @@ const Cooperados = () => {
       </div>
 
       <div className={styles.columnAddCooperado}>
-        <button className={styles.addCooperativa}>
+        <ButtonNext>
           <Link to="/adicionar-cooperado">Adicionar Cooperado 👉</Link>
-        </button>
+        </ButtonNext>
       </div>
+    <h1>Cooperados Cadastrados</h1>
 
-      <main className={styles.MainContainer}>
+      <section className={styles.mainContainer}>
         {filteredCooperados.map((coop: Data, index) => (
-          <div className={styles.ContentContainer} key={index}>
-            <div className={styles.columnImage}>
-              <img className={styles.image} />
-            </div>
+          <div className={styles.contentContainer} key={index}>
+            <img className={styles.image} />
             <h4 className={styles.textNome}>Nome: {coop.nome}</h4>
             <h4>C/c: {coop.conta_corrente}</h4>
             <button
@@ -50,7 +49,7 @@ const Cooperados = () => {
         {filteredCooperados.length === 0 && (
           <div>Atualmente não tem nenhum cooperado cadastrado</div>
         )}
-      </main>
+      </section>
     </>
   );
 };

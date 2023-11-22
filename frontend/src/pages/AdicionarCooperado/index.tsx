@@ -1,4 +1,4 @@
-import S from "./styles.module.css";
+import styles from "./styles.module.css";
 import useAdicionarCooperado from "../../hooks/useAdicionarCooperado";
 
 const AdicionarCooperado = () => {
@@ -7,9 +7,9 @@ const AdicionarCooperado = () => {
 
   return (
     <>
-      <h1 className={S.title}>Adicionar novo Cooperado</h1>
-      <div className={S.container}>
+      <div className={styles.container}>
         <form onSubmit={handleSubmit}>
+          <h1 className={styles.title}>Adicionar novo Cooperado</h1>
           <label>Coloque sua Conta Corrente</label>
           <input
             type="number"

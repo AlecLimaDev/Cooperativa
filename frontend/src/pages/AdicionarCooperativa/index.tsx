@@ -1,4 +1,4 @@
-import S from "./styles.module.css";
+import styles from "./styles.module.css";
 import useAdicionarCooperativa from "../../hooks/useAdicionarCooperativa";
 
 const AdicionarCooperativa = () => {
@@ -7,9 +7,11 @@ const AdicionarCooperativa = () => {
 
   return (
     <>
-      <h1 className={S.title}>Adicionar nova Cooperativa de crédito</h1>
-      <div className={S.container}>
+      <div className={styles.container}>
         <form onSubmit={handleSubmit}>
+          <h1 className={styles.title}>
+            Adicionar nova Cooperativa de crédito
+          </h1>
           <input
             type="text"
             placeholder="Resumo da sua Cooperativa..."

@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
-import useAdicionarCooperado from "../../hooks/useAdicionarCooperado";
-
+import { useAdicionarCooperado } from "./hooks/useAdicionarCooperado";
 const AdicionarCooperado = () => {
   const { addCooperado, handleSubmit, handleInputChange, loading, error } =
     useAdicionarCooperado();

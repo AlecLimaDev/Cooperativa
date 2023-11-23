@@ -1,7 +1,8 @@
 import { AxiosError } from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { instance } from "../helper/axios-instance";
+import { instance } from "../../../helper/axios-instance";
+import { fetchData } from "../../../services/AdicionarFavorito/fetch-data";
 
 interface AddFavoritos {
   nome_contato: string;
@@ -10,7 +11,7 @@ interface AddFavoritos {
   lista_de_chaves: string;
 }
 
-export default function useAdicionarFavorito() {
+export function useAdicionarFavorito() {
   const navigate = useNavigate();
 
   const [favoritos, setFavoritos] = useState<AddFavoritos>({
@@ -29,23 +30,13 @@ export default function useAdicionarFavorito() {
     setFavoritos({ ...favoritos, [name]: value });
   };
 
-  async function fetchData() {
-    try {
-      await instance.get("/lista_de_chaves").then((response) => {
-        setData(response.data);
-      });
-    } catch (error) {
-      const axiosError = error as AxiosError;
-      if (axiosError.response) {
-        throw new Error("Erro de resposta do servidor: " + axiosError.response.data);
-      } else if (axiosError.request) {
-       throw new Error("Sem resposta do servidor: " + axiosError.request);
-      }
-    }
-  }
-
   useEffect(() => {
-    fetchData();
+    async function handleFetchData() {
+      const data = await fetchData();
+      console.log(data);
+      setData(data);
+    }
+    handleFetchData();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -72,14 +63,14 @@ export default function useAdicionarFavorito() {
 
   return {
     loading,
-    setLoading,
+    favoritos,
     error,
-    setError,
     data,
+    setLoading,
+    setError,
     setData,
     handleInputChange,
     handleSubmit,
-    favoritos,
-    setFavoritos
+    setFavoritos,
   };
 }

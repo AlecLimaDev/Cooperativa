@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-import { useFavoritos } from "../../hooks/useFavoritos";
-import { InputSearch } from "../../components/Input/InputSearch";
-import { ButtonNext } from "../../components/ButtonNext/ButtonNext";
+import { useFavoritos } from "./hooks/useFavoritos";
+import { InputSearch } from "../../components/Input/styles";
+import { ButtonNext } from "../../components/Buttons/ButtonNext/styles";
 
 interface Data {
   id?: number;

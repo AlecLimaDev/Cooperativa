@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { instance } from "../helper/axios-instance";
+import { instance } from "../../../helper/axios-instance";
 
 interface Cooperado {
   conta_corrente: string;
   nome: string;
 }
 
-export default function useAdicionarCooperado() {
+export function useAdicionarCooperado() {
   const navigate = useNavigate();
   const [addCooperado, setAddCooperado] = useState<Cooperado>({
     conta_corrente: "",
@@ -65,10 +65,10 @@ export default function useAdicionarCooperado() {
   return {
     loading,
     error,
+    addCooperado,
     setError,
     handleSubmit,
     handleInputChange,
-    addCooperado,
     setAddCooperado,
     navigate,    
   };

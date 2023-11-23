@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { instance } from "../helper/axios-instance";
+import { instance } from "../../../helper/axios-instance";
 
 interface Adicionar {
   id?: number | null;
@@ -9,7 +9,7 @@ interface Adicionar {
   descricao: string;
 }
 
-export default function useAdicionarCooperativa() {
+export function useAdicionarCooperativa() {
   const navigate = useNavigate();
 
   const [addCooperativa, setAddCooperativa] = useState<Adicionar>({

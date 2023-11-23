@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
-import useCooperados from "../../hooks/useCooperados";
-import { InputSearch } from "../../components/Input/InputSearch";
-import { ButtonNext } from "../../components/ButtonNext/ButtonNext";
+import useCooperados from "./hooks/useCooperados";
+import { InputSearch } from "../../components/Input/styles";
+import { ButtonNext } from "../../components/Buttons/ButtonNext/styles";
+import { handleDelete } from "../../services/Cooperados/delete-by-Id";
 
 type Data = {
   id: number | string;
@@ -12,7 +13,7 @@ type Data = {
 };
 
 const Cooperados = () => {
-  const { filteredCooperados, setSearch, handleDelete } = useCooperados();
+  const { filteredCooperados, setSearch } = useCooperados();
 
   return (
     <>

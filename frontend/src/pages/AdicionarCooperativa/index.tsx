@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import useAdicionarCooperativa from "../../hooks/useAdicionarCooperativa";
+import { useAdicionarCooperativa } from "./hooks/useAdicionarCooperativa";
 
 const AdicionarCooperativa = () => {
   const { handleSubmit, addCooperativa, handleInputChange, loading, error } =

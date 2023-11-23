@@ -1,11 +1,13 @@
 import { HTMLAttributes } from "react";
-import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
-import { ButtonContact } from "../ButtonContact/ButtonContact";
+
+import { ButtonContact } from "../Buttons";
+
+import styles from "./styles.module.css";
 
 type HeaderProps = HTMLAttributes<HTMLElement>;
 
-const Header = ({children, ...rest }: HeaderProps) => {
+const Header = ({ children, ...rest }: HeaderProps) => {
   return (
     <>
       <header>
@@ -25,7 +27,7 @@ const Header = ({children, ...rest }: HeaderProps) => {
               <NavLink to="/contatos-favoritos">Contatos Favoritos</NavLink>
             </li>
           </ul>
-          <ButtonContact>Clique aqui</ButtonContact>
+          <ButtonContact />
         </nav>
       </header>
     </>

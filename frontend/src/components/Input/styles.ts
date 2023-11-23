@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Input from "./Input";
+import Input from ".";
 
 export const InputSearch = styled(Input)`
   width: 100%;

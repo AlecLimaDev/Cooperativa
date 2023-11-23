@@ -1,5 +1,5 @@
-import useAdicionarFavorito from "../../hooks/useAdicionarFavorito";
-import S from "./styles.module.css";
+import { useAdicionarFavorito } from "./hooks/useAdicionarFavorito";
+import styles from "./styles.module.css";
 
 interface AddFavoritos {
   nome_contato: string;
@@ -15,7 +15,7 @@ const AdicionarFavorito = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h1 className={S.title}>Adicionar a contatos favoritos</h1>
+        <h1 className={styles.title}>Adicionar a contatos favoritos</h1>
         <select name="lista_de_chaves" value={favoritos.lista_de_chaves}>
           <option value="">Selecione um tipo de chave PIX</option>
           {data.map((item: AddFavoritos, index) => (

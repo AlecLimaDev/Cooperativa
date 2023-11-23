@@ -5,9 +5,9 @@ export async function handleDelete(id: number) {
     try {
       await instance.delete("/cooperados/" + id);
       window.location.reload();
-    } catch (error) {
+    } catch (error: unknown) {
       if (error instanceof AxiosError) {
-        throw new Error("Erro ao Deletar");
+        throw new Error("Erro ao deletar Cooperado " + error.response?.data);
       }
     }
   }

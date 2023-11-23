@@ -7,7 +7,7 @@ export async function handleDelete(id: number) {
       window.location.reload();
     } catch (error) {
       if (error instanceof AxiosError) {
-        throw new Error("Erro ao deletar");
+        throw new Error("Erro ao deletar a Cooperativa de Crédito " + error.response?.data);
       }
     }
   }

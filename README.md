@@ -1,6 +1,6 @@
 # Sistema de Contatos e Cooperativas
-> Este é um sistema de gerenciamento de contatos favoritos, cooperados e cooperativas, utilizando um banco de dados MySQL. Abaixo estão as principais entidades e operações disponíveis.
 
+> Este é um sistema de gerenciamento de contatos favoritos, cooperados e cooperativas, utilizando um banco de dados MySQL. Abaixo estão as principais entidades e operações disponíveis.
 
 ## 🧰 Bibliotecas, frameworks e ferramentas
 
@@ -22,22 +22,19 @@
 
 - MySQL
 
-
 ## Entidades
+
 ### Contatos Favoritos
+
 > A entidade Contatos Favoritos representa os contatos marcados como favoritos. Cada registro nesta entidade possui as seguintes informações:
 
-+---------------------+
-| contatos_favoritos  |
-+---------------------+
-| nome_contato        |
-| tipo_chave_pix      |
-| chave_pix           |
-| cooperado_id        |
-| lista_de_chaves     |
-+---------------------+
-
-
+| Campo           | contatos_favoritos            |
+| --------------- | ----------------------------- |
+| nome_contato    | Nome do contato favorito      |
+| tipo_chave_pix  | Tipos de chave pix do usuário |
+| chave_pix       | Chave pix                     |
+| cooperado_id    | Id único do contato favorito  |
+| lista_de_chaves | Lista de chaves               |
 
 Operações
 INSERT: Adiciona um novo contato favorito ao sistema.
@@ -45,17 +42,15 @@ SELECT: Recupera informações dos contatos favoritos.
 UPDATE: Atualiza as informações de um contato favorito.
 DELETE: Remove um contato favorito do sistema.
 
-
 ### Cooperados
+
 > A entidade Cooperados representa os cooperados no sistema. Cada registro nesta entidade possui as seguintes informações:
 
-+---------------+
-| cooperados    |
-+---------------+
-| cooperativa_id |
-| conta_corrente |
-| nome           |
-+---------------+
+| Campo          | cooperados                     |
+| -------------- | ------------------------------ |
+| cooperativa_id | Identificador único do usuário |
+| conta_corrente | Conta corrente do usuário      |
+| nome           | Nome do usuário                |
 
 Operações
 INSERT: Adiciona um novo cooperado ao sistema.
@@ -63,16 +58,14 @@ SELECT: Recupera informações dos cooperados.
 UPDATE: Atualiza as informações de um cooperado.
 DELETE: Remove um cooperado do sistema.
 
-
 ### Cooperativas
+
 > A entidade Cooperativas representa as cooperativas cadastradas no sistema. Cada registro nesta entidade possui as seguintes informações:
 
-+---------------+
-| cooperativas  |
-+---------------+
-| codigos       |
-| descricao     |
-+---------------+
+| Campo     | cooperativas                   |
+| --------- | ------------------------------ |
+| codigos   | nome da cooperativa de crédito |
+| descricao | resumo da cooperativa          |
 
 Operações
 INSERT: Adiciona uma nova cooperativa ao sistema.
@@ -80,14 +73,9 @@ SELECT: Recupera informações das cooperativas.
 UPDATE: Atualiza as informações de uma cooperativa.
 DELETE: Remove uma cooperativa do sistema.
 
-
 ### Lista de Chaves
-> A entidade Lista de Chaves contém um SELECT que recupera informações dos contatos favoritos ordenados por lista_de_chaves.
-+------------------+
-| lista_de_chaves  |
-+------------------+
-| (SELECT result)  |
-+------------------+
+
+> Aqui na Lista de Chaves contém um SELECT que recupera informações dos contatos favoritos ordenados por lista_de_chaves.
 
 Operações
 SELECT: Recupera informações dos contatos favoritos ordenados por lista de chaves.
@@ -103,7 +91,7 @@ git clone $URL_DO_PROJETO.git
 Em seguida, você vai baixar as dependências:
 
 ```
-npm install  
+npm install
 ```
 
 Ou
@@ -113,6 +101,7 @@ yard add
 ```
 
 ## Inicializando o Backend
+
 Na pasta do backend, execute:
 
 ```
@@ -122,17 +111,19 @@ npm start
 O servidor estará disponível em https://localhost:2001.
 
 ## Inicializando o Frontend
+
 Na pasta do frontend, execute:
 
 ```
 yarn dev
 ```
+
 Ou
+
 ```
 npm run dev
 ```
+
 A aplicação estará disponível em http://localhost:5173.
-
-
 
 🖋️ Autor: Alec Lima

@@ -1,4 +1,4 @@
-# Sistema de Contatos e Cooperativas
+# Sistema de Cooperativa de crédito
 
 > Este é um sistema de gerenciamento de contatos favoritos, cooperados e cooperativas, utilizando um banco de dados MySQL. Abaixo estão as principais entidades e operações disponíveis.
 
